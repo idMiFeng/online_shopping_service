@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+option go_package = ".;proto";
+
+package proto;
+
+import "google/api/annotations.proto";
+
+
+service Goods{
+    rpc GetGoodsByRoom(GetGoodsByRoomReq) returns (GoodsListResp){
+        option (google.api.http) = {
+            post: "/v1/goods"
+            body: "*"
+        };
+    };  // 获取直播间商品列表
+    rpc GetGoodsDetail(GetGoodsDetailReq) returns (GoodsDetail);  // 获取商品详情页
+}
+
+message GetGoodsByRoomReq{
+    int64 UserId = 1;
+    int64 RoomId = 2;
+}
+
+message GoodsListResp{
+    int64 CurrentGoodsId = 1;
+    repeated GoodsInfo Data = 2;
+}
+
+// 列表页的商品数据
+message GoodsInfo {
+    int64 GoodsId = 1;
+    int64 CategoryId = 2;
+    int32 Status = 3;
+    string Title = 4;
+    string MarketPrice = 5;
+    string Price = 6;
+    string Brief = 7;
+    repeated string HeadImgs = 8;
+}
+
+
+message GetGoodsDetailReq{
+    int64 GoodsId = 1;
+    int64 UserId = 2;
+}
+
+message GoodsDetail{
+    int64 GoodsId = 1;
+    int64 CategoryId = 2;
+    int32 Status = 3;
+    string Title = 4;
+    string Code = 5;
+    string BrandName = 6;
+    string MarketPrice = 7;
+    string Price = 8;
+    string Brief = 9;
+    repeated string HeadImgs = 10;
+    repeated string Videos = 11;
+    repeated string Detail = 12;
+}

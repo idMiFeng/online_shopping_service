@@ -1,0 +1,16 @@
+{"level":"INFO","time":"2023-08-30T09:10:39.821+0800","caller":"logger/logger.go:41","msg":"init logger success"}
+{"level":"INFO","time":"2023-08-30T09:10:42.725+0800","caller":"goods_service/main.go:79","msg":"rpc server start","ip":"127.0.0.1","port":8381}
+{"level":"INFO","time":"2023-08-30T09:10:42.727+0800","caller":"goods_service/main.go:119","msg":"gRPC-Gateway HTTP Server start","ip":"127.0.0.1","port":8091}
+{"level":"INFO","time":"2023-08-30T09:10:42.727+0800","caller":"goods_service/main.go:125","msg":"Serving gRPC-Gateway on http://0.0.0.0:8091"}
+{"level":"INFO","time":"2023-08-30T09:14:55.271+0800","caller":"logger/logger.go:41","msg":"init logger success"}
+{"level":"INFO","time":"2023-08-30T09:14:57.557+0800","caller":"goods_service/main.go:79","msg":"rpc server start","ip":"127.0.0.1","port":8381}
+{"level":"INFO","time":"2023-08-30T09:14:57.560+0800","caller":"goods_service/main.go:119","msg":"gRPC-Gateway HTTP Server start","ip":"127.0.0.1","port":8091}
+{"level":"INFO","time":"2023-08-30T09:14:57.560+0800","caller":"goods_service/main.go:125","msg":"Serving gRPC-Gateway on http://0.0.0.0:8091"}
+{"level":"INFO","time":"2023-08-30T09:47:28.321+0800","caller":"logger/logger.go:41","msg":"init logger success"}
+{"level":"INFO","time":"2023-08-30T09:47:28.980+0800","caller":"goods_service/main.go:79","msg":"rpc server start","ip":"127.0.0.1","port":8381}
+{"level":"INFO","time":"2023-08-30T09:47:28.982+0800","caller":"goods_service/main.go:119","msg":"gRPC-Gateway HTTP Server start","ip":"127.0.0.1","port":8091}
+{"level":"INFO","time":"2023-08-30T09:47:28.982+0800","caller":"goods_service/main.go:125","msg":"Serving gRPC-Gateway on http://0.0.0.0:8091"}
+{"level":"INFO","time":"2023-09-03T00:18:07.284+0800","caller":"logger/logger.go:41","msg":"init logger success"}
+{"level":"INFO","time":"2023-09-03T00:18:07.592+0800","caller":"goods_service/main.go:79","msg":"rpc server start","ip":"127.0.0.1","port":8381}
+{"level":"INFO","time":"2023-09-03T00:18:07.593+0800","caller":"goods_service/main.go:119","msg":"gRPC-Gateway HTTP Server start","ip":"127.0.0.1","port":8091}
+{"level":"INFO","time":"2023-09-03T00:18:07.593+0800","caller":"goods_service/main.go:125","msg":"Serving gRPC-Gateway on http://0.0.0.0:8091"}

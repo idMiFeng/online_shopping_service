@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+import "goods.proto";
+
+option go_package = ".;proto";
+
+
+service Order{
+    rpc CreateOrder(OrderReq)returns(google.protobuf.Empty){
+        option (google.api.http) = {
+            post: "/v1/createorder"
+            body: "*"
+        };
+    };  // 创建订单
+    rpc OrderList(OrderListReq)returns(OrderListResp){
+        option (google.api.http) = {
+            post: "/v1/orderlist"
+            body: "*"
+        };
+    };  // 订单列表
+    rpc OrderDetail(OrderDetailReq)returns(OrderDetailInfo);  // 订单详情
+    rpc UpdateOrderStatus(OrderStatus)returns(google.protobuf.Empty);  // 更新订单状态
+}
+
+
+message OrderReq{
+    int64 goodsId = 1;
+    int64 num = 2;
+    int64 userId = 3;
+    int64 orderId = 4;
+    int64 tradeId = 5;
+    string address = 6;
+    string name = 7;
+    string phone = 8;
+}
+
+message OrderListReq{
+    int64 userId = 1;
+    int32 pageNum = 2;
+    int32 pageSize = 3;
+}
+
+message OrderListResp{
+    int32 total = 1;
+    repeated OrderInfo data = 2;
+}
+
+message OrderInfo {
+    int64 orderId = 1;
+    int64 userId = 2;
+    int32 status = 3;
+    string payChannel = 4;
+    int64 payAmount = 5;
+    google.protobuf.Timestamp payTime = 6;
+}
+
+message OrderDetailReq{
+    int64 orderId = 1;
+    int64 userId = 2;
+}
+
+message OrderDetailInfo{
+    OrderInfo orderInfo = 1;
+    repeated GoodsInfo goodsInfo = 2;
+}
+
+message OrderStatus{
+    int64 orderId = 1;
+    int32 status = 2;
+}

@@ -1,0 +1,49 @@
+name: "stock_srv"
+mode: "dev"
+ip: "127.0.0.1"
+port: 8382
+version: "v0.0.1"
+start_time: "2002-10-27"
+machine_id: 2
+
+# 冒号后加空格
+# 缩进是连续的两个空格
+# 有兴趣的同学可以了解下toml
+log:
+  level: "debug"
+  filename: "stock_srv.log"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
+
+mysql:
+  host: "124.71.74.243"
+  port: 3306
+  user: "admin"
+  password: "ABC12345abc"
+  dbname: "tiktok_tables"
+  max_open_conns: 100
+  max_idle_conns: 10
+
+redis:
+  host: "124.71.74.243"
+  port: 6379
+  password: ""
+  db: 1
+  pool_size: 100
+
+consul:
+  addr: "127.0.0.1:8500"
+
+goods_service:
+    name: goods_srv
+
+stock_service:
+    name: stock_srv
+
+rocketmq:
+    addr: 127.0.0.1:9876
+    group_id: order_srv
+    topic:
+      pay_timeout: xx_order_timeout
+      stock_rollback: xx_stock_rollback

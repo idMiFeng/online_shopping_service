@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/protobuf/empty.proto";
+
+option go_package = ".;proto";
+
+service stock {
+    rpc SetStock(GoodsStockInfo) returns (google.protobuf.Empty);  // 设置库存
+    rpc GetStock(GoodsStockInfo) returns (GoodsStockInfo);  // 获取库存
+
+    rpc ReduceStock(GoodsStockInfo) returns(google.protobuf.Empty);  // 扣减库存
+
+    rpc BatchGetStock(StockInfoList) returns (StockInfoList);  // 批量查询库存
+    rpc BatchReduceStock(StockInfoList) returns (StockInfoList);  // 批量查询库存
+
+    rpc RollbackStock(GoodsStockInfo) returns (google.protobuf.Empty);  // 回滚库存
+}
+
+message GoodsStockInfo {
+    int64 goodsId = 1;
+    int64 num = 2;
+    int64 OrderId = 3; // 新增
+}
+
+message StockInfoList {
+    repeated GoodsStockInfo data = 1;
+}
